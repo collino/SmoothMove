@@ -22,7 +22,7 @@
 			}
 
 			$(this).click(function() {
-				if (settings.scrollTarget != null) {
+				if (settings.target != null) {
 					var scrollTarget = settings.target;
 				} else {
 					var scrollTarget = $(this).attr("href");
