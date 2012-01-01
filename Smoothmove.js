@@ -1,11 +1,19 @@
-// Page Scroller Plugin by Collin Olan
+/*
+
+	SmoothMove
+	A simple page scrolling jQuery Plugin
+	
+	@author Collin Olan
+
+*/
 (function( $ ){
 
 	$.fn.smoothmove = function( options ) {
 
 		var settings = {
 			'speed': 300,
-			'offsetting': -30
+			'offset': 30,
+			'target': null
 		};
 
 		return this.each(function() {
@@ -14,10 +22,15 @@
 			}
 
 			$(this).click(function() {
-				var anchor = $(this).attr("href");
+				if (settings.scrollTarget != null) {
+					var scrollTarget = settings.target;
+				} else {
+					var scrollTarget = $(this).attr("href");
+				};
+				
 				if ($(anchor).length > 0) {
-					var destination = parseInt($(anchor).offset().top settings.offsetting);
-					$("html:not(:animated),body:not(:animated)").animate({ scrollTop: destination }, settings.speed );
+					var destination = $(scrollTarget).offset().top;
+					$("html:not(:animated),body:not(:animated)").animate({ scrollTop: destination - settings.offset}, settings.speed );
 					return false;
 				} else {
 					return;
