@@ -28,7 +28,7 @@
 					var scrollTarget = $(this).attr("href");
 				};
 				
-				if ($(anchor).length > 0) {
+				if ($(scrollTarget).length > 0) {
 					var destination = $(scrollTarget).offset().top;
 					$("html:not(:animated),body:not(:animated)").animate({ scrollTop: destination - settings.offset}, settings.speed );
 					return false;
