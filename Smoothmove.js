@@ -22,11 +22,12 @@
 			}
 
 			$(this).click(function() {
-				if (settings.target != null) {
-					var scrollTarget = settings.target;
+                var scrollTarget;
+				if (settings.target !== null) {
+					scrollTarget = settings.target;
 				} else {
-					var scrollTarget = $(this).attr("href");
-				};
+					scrollTarget = $(this).attr("href");
+				}
 				
 				if ($(scrollTarget).length > 0) {
 					var destination = $(scrollTarget).offset().top;
@@ -34,7 +35,7 @@
 					return false;
 				} else {
 					return;
-				};
+				}
 				
 			});
 

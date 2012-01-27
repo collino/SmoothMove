@@ -1,3 +1,12 @@
 h1. SmoothMove
 
-A simple page scrolling jQuery Plugin
+A simple page scrolling jQuery Plugin.
+
+Attach to anchors and smooth scroll to them, optionally setting the target manually.
+
+
+h2. Options
+
+* speed (ms)
+* offset
+* target $(element)
